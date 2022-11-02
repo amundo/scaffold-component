@@ -175,14 +175,6 @@ let html = `
     <h2>See also</h2>
     <!-- see also -->
     <dl id=see-also-list>
-      <div>
-        <dt><!-- layout name --></dt>
-        <dd>
-          <p>
-          <!-- layout description -->
-          </p>
-        </dd>
-      </div>
     </dl>
     <${slug}></${slug}>
   </section>
@@ -191,7 +183,7 @@ let html = `
 <script type="module">
 import {${componentName}} from './${componentName}.js'
 
-window[${componentName}] = document.querySelector('${slug}')
+window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.querySelector('${slug}')
 </script>
 
 </body>

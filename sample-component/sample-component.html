@@ -91,14 +91,6 @@
     <h2>See also</h2>
     <!-- see also -->
     <dl id=see-also-list>
-      <div>
-        <dt><!-- layout name --></dt>
-        <dd>
-          <p>
-          <!-- layout description -->
-          </p>
-        </dd>
-      </div>
     </dl>
     <sample-component></sample-component>
   </section>
@@ -107,7 +99,7 @@
 <script type="module">
 import {SampleComponent} from './SampleComponent.js'
 
-window[SampleComponent] = document.querySelector('sample-component')
+window.sampleComponent = document.querySelector('sample-component')
 </script>
 
 </body>
