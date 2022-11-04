@@ -82,14 +82,14 @@ customElements.define('${slug}', ${componentName})
 await Deno.writeTextFile(`${slug}/${componentName}.js`, js)
 
 
-let html = `
+let docsHtml = `
 <!doctype html>
 <html lang="en">
 <head>  
   <title>${slug}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="${slug}.css">
+  <link rel="stylesheet" href="${slug}-docs.css">
 
 </head>
 <body>
@@ -190,7 +190,49 @@ window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.que
 </html>
 `.trim() + '\n'
 
-await Deno.writeTextFile(`${slug}/${slug}.html`, html)
+await Deno.writeTextFile(`${slug}/${slug}-docs.html`, docsHtml)
+
+
+
+let docsCss = `
+header {
+  background: green;
+  color:white;
+}
+
+${slug} {
+  display: block;
+}
+`
+
+await Deno.writeTextFile(`${slug}/${slug}-docs.css`, docsCss)
+
+
+let sampleHtml = `
+<!doctype html>
+<html lang="en">
+<head>  
+  <title>${slug}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="${slug}.css">
+
+</head>
+<body>
+
+    <${slug}></${slug}>  
+
+<script type="module">
+import {${componentName}} from './${componentName}.js'
+
+window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.querySelector('${slug}')
+</script>
+
+</body>
+</html>
+`.trim() + '\n'
+
+await Deno.writeTextFile(`${slug}/${slug}.html`, sampleHtml)
 
 
 let css = `
