@@ -83,7 +83,7 @@ await Deno.writeTextFile(`${slug}/${componentName}.js`, js)
 
 
 let html = `
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>  
   <title>${slug}</title>
@@ -188,7 +188,7 @@ window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.que
 
 </body>
 </html>
-`
+`.trim() + '\n'
 
 await Deno.writeTextFile(`${slug}/${slug}.html`, html)
 
