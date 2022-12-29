@@ -25,30 +25,32 @@ class SampleComponent extends HTMLElement {
   }
 
   /*
-  set data({metadata, dataType}){
-    this.dataType = dataType
-    this.metadata = metadata
+  set data(data){
+    this.whatever = data.whatever
+    this.metadata = data.metadata
     this.render()
   }
 
   get data(){
     return {
-      dataType: this.dataType,
+      whatever: this.whatever,
       metadata: this.metadata
     }
   }
   */
 
   render(){
-    // edit .innerHTML
+    // edit .innerHTML here
   }
 
   listen(){
+    /*
     this.addEventListener('click', clickEvent => {
       if(clickEvent.target.matches()){
 
       }
     })
+    */
   }
 }
 

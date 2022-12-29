@@ -48,30 +48,32 @@ let js = `class ${componentName} extends HTMLElement {
   }
 
   /*
-  set data({metadata, dataType}){
-    this.dataType = dataType
-    this.metadata = metadata
+  set data(data){
+    this.whatever = data.whatever
+    this.metadata = data.metadata
     this.render()
   }
 
   get data(){
     return {
-      dataType: this.dataType,
+      whatever: this.whatever,
       metadata: this.metadata
     }
   }
   */
 
   render(){
-    // edit .innerHTML
+    // edit .innerHTML here
   }
 
   listen(){
+    /*
     this.addEventListener('click', clickEvent => {
       if(clickEvent.target.matches()){
 
       }
     })
+    */
   }
 }
 
@@ -100,83 +102,36 @@ let docsHtml = `
 </header>
 
 <main>
-  <section id=try-it>
-    <h2>Try it</h2>
+  <section id=example>
+    <h2>Example</h2>
     <${slug}></${slug}>
   </section>
 
   <section id=attributes>
     <h2>Attributes</h2>
     <!-- list attributes -->
-    <dl id=attributes-list>
-      <div>
-        <dt><!-- attribute name --></dt>
-        <dd>
-          <p>
-          <!-- attribute description -->
-          </p>
-        </dd>
-      </div>
-    </dl>
-    <${slug}></${slug}>
   </section>
 
   <section id=methods>
     <h2>Methods</h2>
     <!-- list methods -->
-    <dl id=methods-list>
-      <div>
-        <dt><!-- method name --></dt>
-        <dd>
-          <p>
-          <!-- method description -->
-          </p>
-        </dd>
-      </div>
-    </dl>
-    <${slug}></${slug}>
   </section>
 
 
   <section id=events>
     <h2>Events</h2>
     <!-- list events -->
-    <dl id=events-list>
-      <div>
-        <dt><!-- event name --></dt>
-        <dd>
-          <p>
-          <!-- event description -->
-          </p>
-        </dd>
-      </div>
-    </dl>
-    <${slug}></${slug}>
   </section>
 
   <section id=layouts>
     <h2>Layouts</h2>
     <!-- list layouts -->
-    <dl id=layouts-list>
-      <div>
-        <dt><!-- layout name --></dt>
-        <dd>
-          <p>
-          <!-- layout description -->
-          </p>
-        </dd>
-      </div>
-    </dl>
-    <${slug}></${slug}>
   </section>
 
 
   <section id=see-also>
     <h2>See also</h2>
     <!-- see also -->
-    <dl id=see-also-list>
-    </dl>
-    <${slug}></${slug}>
   </section>
 </main>
 
@@ -242,3 +197,4 @@ ${slug} {
 `
 
 await Deno.writeTextFile(`${slug}/${slug}.css`, css)
+
