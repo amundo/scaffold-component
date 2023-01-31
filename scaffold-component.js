@@ -115,6 +115,10 @@ let docsHtml = `
     <!-- list methods -->
   </section>
 
+  <section id=data>
+    <h2>Data</h2>
+    <!-- list data formats -->
+  </section>
 
   <section id=events>
     <h2>Events</h2>
