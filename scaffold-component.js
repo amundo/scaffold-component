@@ -67,13 +67,11 @@ let js = `class ${componentName} extends HTMLElement {
   }
 
   listen(){
-    /*
     this.addEventListener('click', clickEvent => {
       if(clickEvent.target.matches()){
 
       }
     })
-    */
   }
 }
 
