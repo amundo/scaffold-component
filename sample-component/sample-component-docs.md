@@ -10,7 +10,7 @@ viewport: width=device-width
 
 </div>
 
-::: {role="main"}
+<main>
 ::: {#example .section}
 ## Example
 :::
@@ -38,4 +38,4 @@ viewport: width=device-width
 ::: {#see-also .section}
 ## See also
 :::
-:::
+</main>

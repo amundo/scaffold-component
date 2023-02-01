@@ -224,7 +224,7 @@ viewport: width=device-width
 
 </div>
 
-::: {role="main"}
+<main>
 ::: {#example .section}
 ## Example
 :::
@@ -252,9 +252,8 @@ viewport: width=device-width
 ::: {#see-also .section}
 ## See also
 :::
-:::
+</main>
 `
-
 
 
 await Deno.writeTextFile(`${slug}/${slug}-docs.md`, docsMarkdownTemplate) 
