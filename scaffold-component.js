@@ -200,3 +200,61 @@ ${slug} {
 
 await Deno.writeTextFile(`${slug}/${slug}.css`, css)
 
+let denoConfig = {
+  "tasks": {
+      "build": `pandoc -f markdown -t html --css ${slug}-docs.css --section-divs --template=template.html -o ${slug}-docs.html ${slug}-docs.md`
+  }
+}
+
+let template = Deno.readTextFileSync('template.html')
+
+Deno.writeTextFileSync(`${slug}/template.html`, template)
+
+await Deno.writeTextFile(`${slug}/deno.json`, JSON.stringify(denoConfig, null, 2))
+
+let docsMarkdownTemplate = `---
+lang: en
+title: \\<sample-component\\>
+viewport: width=device-width
+---
+
+<div>
+
+# \\<${slug}\\>
+
+</div>
+
+::: {role="main"}
+::: {#example .section}
+## Example
+:::
+
+::: {#attributes .section}
+## Attributes
+:::
+
+::: {#methods .section}
+## Methods
+:::
+
+::: {#data .section}
+## Data
+:::
+
+::: {#events .section}
+## Events
+:::
+
+::: {#layouts .section}
+## Layouts
+:::
+
+::: {#see-also .section}
+## See also
+:::
+:::
+`
+
+
+
+await Deno.writeTextFile(`${slug}/${slug}-docs.md`, docsMarkdownTemplate) 
