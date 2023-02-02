@@ -39,3 +39,11 @@ viewport: width=device-width
 ## See also
 :::
 </main>
+
+
+<script type="module">
+import {SampleComponent} from './SampleComponent.js'
+
+window.sampleComponent = document.querySelector('sample-component')
+</script>
+

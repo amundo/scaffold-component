@@ -19,7 +19,7 @@ let kebabToCamel = s => s
   .map(token => token[0].toUpperCase() + token.slice(1))
   .join("")
 
-let componentName = kebabToCamel(slug)
+const componentName = kebabToCamel(slug)
 
 let js = `class ${componentName} extends HTMLElement {
   constructor(){
@@ -80,76 +80,6 @@ customElements.define('${slug}', ${componentName})
 `
 
 await Deno.writeTextFile(`${slug}/${componentName}.js`, js)
-
-
-let docsHtml = `
-<!doctype html>
-<html lang="en">
-<head>  
-  <title>${slug}</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="${slug}-docs.css">
-
-</head>
-<body>
-  
-<header>
-  <h1>&lt;${slug}></h1>
-  <p class=description></p>
-</header>
-
-<main>
-  <section id=example>
-    <h2>Example</h2>
-    <${slug}></${slug}>
-  </section>
-
-  <section id=attributes>
-    <h2>Attributes</h2>
-    <!-- list attributes -->
-  </section>
-
-  <section id=methods>
-    <h2>Methods</h2>
-    <!-- list methods -->
-  </section>
-
-  <section id=data>
-    <h2>Data</h2>
-    <!-- list data formats -->
-  </section>
-
-  <section id=events>
-    <h2>Events</h2>
-    <!-- list events -->
-  </section>
-
-  <section id=layouts>
-    <h2>Layouts</h2>
-    <!-- list layouts -->
-  </section>
-
-
-  <section id=see-also>
-    <h2>See also</h2>
-    <!-- see also -->
-  </section>
-</main>
-
-<script type="module">
-import {${componentName}} from './${componentName}.js'
-
-window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.querySelector('${slug}')
-</script>
-
-</body>
-</html>
-`.trim() + '\n'
-
-await Deno.writeTextFile(`${slug}/${slug}-docs.html`, docsHtml)
-
-
 
 let docsCss = `
 header {
@@ -328,6 +258,14 @@ viewport: width=device-width
 ## See also
 :::
 </main>
+
+
+<script type="module">
+import {${componentName}} from './${componentName}.js'
+
+window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.querySelector('${slug}')
+</script>
+
 `
 
 
