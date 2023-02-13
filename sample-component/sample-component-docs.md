@@ -1,7 +1,7 @@
 ---
 lang: en
-title: \<sample-component\>
-viewport: width=device-width
+title:  \<sample-component\>
+css: sample-component.css
 ---
 
 <div>

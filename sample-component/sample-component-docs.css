@@ -1,4 +1,5 @@
 
+@import url(sample-component.css);
 header {
   background: green;
   color:white;
