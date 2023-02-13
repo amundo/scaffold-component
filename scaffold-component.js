@@ -19,9 +19,18 @@ let kebabToCamel = s => s
   .map(token => token[0].toUpperCase() + token.slice(1))
   .join("")
 
+/* like camel, but first letter is lower */
+let kebabToOstrich = s => {
+  let decapitalize = w => w[0].toUpperCase() + w.slice(1)
+  let camel = kebabToCamel(s)
+  let ostrich = decapitalize(camel)
+  return ostrich
+}
+
 const componentName = kebabToCamel(slug)
 
-let js = `class ${componentName} extends HTMLElement {
+/* sample-component/SampleComponent.js */
+let componentJs = `class ${componentName} extends HTMLElement {
   constructor(){
     super()
     this.listen()
@@ -79,9 +88,12 @@ export {${componentName}}
 customElements.define('${slug}', ${componentName})
 `
 
-await Deno.writeTextFile(`${slug}/${componentName}.js`, js)
+await Deno.writeTextFile(`${slug}/${componentName}.js`, componentJs)
 
+/* sample-component/sample-component-docs.css */
 let docsCss = `
+@import url(${slug}.css);
+
 header {
   background: green;
   color:white;
@@ -94,7 +106,7 @@ ${slug} {
 
 await Deno.writeTextFile(`${slug}/${slug}-docs.css`, docsCss)
 
-
+/* sample-component/sample-component.html */
 let sampleHtml = `
 <!doctype html>
 <html lang="en">
@@ -112,7 +124,7 @@ let sampleHtml = `
 <script type="module">
 import {${componentName}} from './${componentName}.js'
 
-window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.querySelector('${slug}')
+window.${kebabToOstrich(componentName)} = document.querySelector('${slug}')
 </script>
 
 </body>
@@ -121,7 +133,7 @@ window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.que
 
 await Deno.writeTextFile(`${slug}/${slug}.html`, sampleHtml)
 
-
+/* sample-component/sample-component.css */
 let css = `
 ${slug} {
   display: block;
@@ -219,8 +231,8 @@ await Deno.writeTextFile(`${slug}/deno.json`, JSON.stringify(denoConfig, null, 2
 
 let docsMarkdownTemplate = `---
 lang: en
-title: \\<sample-component\\>
-viewport: width=device-width
+title:  \\<${slug}\\>
+css: ${slug}.css
 ---
 
 <div>
