@@ -2,8 +2,7 @@
 
 I use this deno script to do a very simple scaffold of a new web component.
 
-It just creates a directory with three files, see example in `sample-component/`.
-
+Check the `sample-component` directory to see what the generated stuff looks like. 
 
 ## Installation
 
@@ -21,6 +20,16 @@ $ deno task reinstall
 
 Not sure if that’s a good name… 🤔
 
+### Install from GitHub
+
+You should be able install directly from GitHub without cloning the repo:
+
+```
+$ deno install --allow-write https://raw.githubusercontent.com/amundo/scaffold-component/main/scaffold-component.js
+```
+
+## Usage
+
 To build a sample, empty component, run:
 
 
@@ -28,7 +37,15 @@ To build a sample, empty component, run:
 $ deno task build-sample
 ```
 
-YMMV.
+## Building documentation (requires pandoc)
+
+In the component directory:
+
+```
+$ deno task build
+```
+
+This will generate `<your-component>-docs.html`. This way you can work on documentation  directly in `<your-component>-docs.md` without writing `HTML` by hand.
 
 ## LICENSE
 
