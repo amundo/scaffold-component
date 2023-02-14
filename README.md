@@ -1,6 +1,6 @@
 # scaffold-component
 
-I use this deno script to do a very simple scaffold of a new web component.
+I use this deno script to do a very simple scaffold of a new web component. It’s very simple and moslty servers to save me typing — I doubt it will be of interest to others, but have a look if you are interested.
 
 Check the `sample-component` directory to see what the generated stuff looks like. 
 
