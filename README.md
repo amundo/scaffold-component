@@ -29,7 +29,7 @@ $ deno install --allow-write https://raw.githubusercontent.com/amundo/scaffold-c
 
 ## Usage
 
-To build a sample, empty component, run:
+To scaffold a skeleton component, run:
 
 
 ```
