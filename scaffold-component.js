@@ -1,3 +1,5 @@
+import { parse } from "https://deno.land/std@0.175.0/flags/mod.ts"
+
 /*
 
   scaffold a component
@@ -19,8 +21,20 @@
 
 */
 
-const slug = Deno.args[0]
+let flags = parse(Deno.args)
 
+if(!flags._[0]){
+  console.log("Component name required: $ scaffold-component my-component");
+  Deno.exit(1); // exit with status code 1 (error)
+}
+
+const slug = flags._[0]
+
+if(!slug.includes("-")){
+  console.log("Component name must include hyphen: my-component")
+  Deno.exit(1); // exit with status code 1 (error)
+
+}
 
 try {
   const dirInfo = await Deno.stat(slug);
