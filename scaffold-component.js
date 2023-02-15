@@ -142,16 +142,21 @@ ${slug} {
 
 await Deno.writeTextFile(`${slug}/${slug}.css`, css)
 
+/* sample-component/deno.json */
 let denoConfig = {
   "tasks": {
       "build": `pandoc -f markdown -t html --css ${slug}-docs.css --section-divs --template=template.html -o ${slug}-docs.html ${slug}-docs.md`
   }
 }
+await Deno.writeTextFile(`${slug}/deno.json`, JSON.stringify(denoConfig, null, 2))
 
+
+/* docs template (for pandoc) */
 let template = `
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
+<html lang="$lang$">
 <head>
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -167,7 +172,6 @@ $endif$
 $if(description-meta)$
   <meta name="description" content="$description-meta$" />
 $endif$
-  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <style>
     $styles.html()$
   </style>
@@ -180,17 +184,14 @@ $endfor$
 $if(math)$
   $math$
 $endif$
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 $for(include-before)$
 $include-before$
 $endfor$
-$if(title)$
+$if(pagetitle)$
 <header id="title-block-header">
-<h1 class="title">$title$</h1>
+<h1 class="title">$pagetitle$</h1>
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
@@ -227,8 +228,8 @@ $endfor$
 
 Deno.writeTextFileSync(`${slug}/template.html`, template)
 
-await Deno.writeTextFile(`${slug}/deno.json`, JSON.stringify(denoConfig, null, 2))
 
+/* sample-component/sample-component.md */
 let docsMarkdownTemplate = `---
 lang: en
 title:  \\<${slug}\\>
@@ -279,6 +280,5 @@ window.${componentName[0].toLowerCase() + componentName.slice(1)} = document.que
 </script>
 
 `
-
 
 await Deno.writeTextFile(`${slug}/${slug}-docs.md`, docsMarkdownTemplate) 
