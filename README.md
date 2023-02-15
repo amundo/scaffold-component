@@ -29,7 +29,15 @@ $ deno install --allow-write https://raw.githubusercontent.com/amundo/scaffold-c
 
 ## Usage
 
-To scaffold a skeleton component, run:
+These examples assume the tool has been installed and that `~/.deno/bin` is on your `$PATH`.
+
+To create a skeleton component called `my-component`, do:
+
+```
+$ scaffold-component my-component
+```
+
+The sample component (included in the repo) is called `sample-component`. To rebuild it if you wish you, you can run this task:
 
 
 ```
