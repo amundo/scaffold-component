@@ -21,6 +21,21 @@
 
 const slug = Deno.args[0]
 
+
+try {
+  const dirInfo = await Deno.stat(slug);
+  if (dirInfo.isDirectory) {
+    console.log(`Directory ${slug} already exists. To overwrite, use --force Exiting program...`);
+    Deno.exit(0); // exit with status code 0 (success)
+  }
+} catch (error) {
+  if (error instanceof Deno.errors.NotFound) {
+  } else {
+    console.log("Error checking directory:", error);
+    Deno.exit(1); // exit with status code 1 (error)
+  }
+}
+
 await Deno.mkdir(slug)
 
 let kebabToCamel = s => s
