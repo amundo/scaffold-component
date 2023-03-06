@@ -2,8 +2,7 @@
 
 I use this deno script to do a very simple scaffold of a new web component. It’s very simple and mostly serves to save me typing — I doubt it will be of interest to others, but have a look if you are interested.
 
-Check the `sample-component` directory to see what a generated web component framework looks like. 
-
+Check the `sample-component` directory to see what a generated web component looks like. 
 
 * Does not use shadow dom, as I am not a fan.
 * Requires `pandoc` to be installed to generate `HTML` documentation (`my-component-docs.html`) from markdown file `my-component-docs.md`. The idea is that you only edit the markdown file.
