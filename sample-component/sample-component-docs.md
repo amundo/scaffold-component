@@ -13,6 +13,17 @@ css: sample-component.css
 <main>
 ::: {#example .section}
 ## Example
+
+
+```html
+<sample-component></sample-component>
+```
+
+```{=html}
+<sample-component></sample-component>
+```
+
+
 :::
 
 ::: {#attributes .section}
