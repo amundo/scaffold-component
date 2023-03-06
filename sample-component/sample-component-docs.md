@@ -15,15 +15,6 @@ css: sample-component.css
 ## Example
 
 
-```html
-<sample-component></sample-component>
-```
-
-```{=html}
-<sample-component></sample-component>
-```
-
-
 :::
 
 ::: {#attributes .section}
