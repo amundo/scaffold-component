@@ -132,13 +132,29 @@ await Deno.writeTextFile(`${slug}/${componentName}.js`, componentJs)
 let docsCss = `
 @import url(${slug}.css);
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body > * {
+  font-family: sans-serif;
+  padding:1em;
+}
+
 header {
   background: green;
   color:white;
 }
 
+header h1 {
+  font-family: monospace;
+}
+
 ${slug} {
-  display: block;
 }
 `
 
@@ -283,6 +299,17 @@ css: ${slug}.css
 <main>
 ::: {#example .section}
 ## Example
+
+
+\`\`\`html
+<${slug}></${slug}>
+\`\`\`
+
+\`\`\`{=html}
+<${slug}></${slug}>
+\`\`\`
+
+
 :::
 
 ::: {#attributes .section}
