@@ -199,7 +199,7 @@ await Deno.writeTextFile(`${slug}/${slug}.css`, css)
 /* sample-component/deno.json */
 let denoConfig = {
   "tasks": {
-      "build": `pandoc -f markdown -t html --css ${slug}-docs.css --section-divs --template=template.html -o ${slug}-docs.html ${slug}-docs.md`
+      "build": `pandoc -f markdown -t html --css ${slug}-docs.css --template=template.html -o ${slug}-docs.html ${slug}-docs.md`
   }
 }
 await Deno.writeTextFile(`${slug}/deno.json`, JSON.stringify(denoConfig, null, 2))
@@ -286,18 +286,13 @@ Deno.writeTextFileSync(`${slug}/template.html`, template)
 /* sample-component/sample-component.md */
 let docsMarkdownTemplate = `---
 lang: en
-title:  \\<${slug}\\>
+title:  \\<${slug}\\> docs
 css: ${slug}.css
 ---
 
-<div>
-
-# \\<${slug}\\>
-
-</div>
-
 <main>
-::: {#example .section}
+
+<section id=example>
 ## Example
 
 
@@ -310,31 +305,37 @@ css: ${slug}.css
 \`\`\`
 
 
-:::
 
-::: {#attributes .section}
+</section>
+
+<section id=attributes>
 ## Attributes
-:::
 
-::: {#methods .section}
+</section>
+
+<section id=methods>
 ## Methods
-:::
 
-::: {#data .section}
+</section>
+
+<section id=data>
 ## Data
-:::
 
-::: {#events .section}
+</section>
+
+<section id=events>
 ## Events
-:::
 
-::: {#layouts .section}
+</section>
+
+<section id=layouts>
 ## Layouts
-:::
 
-::: {#see-also .section}
+</section>
+
+<section id=see-also>
 ## See also
-:::
+
 </main>
 
 
