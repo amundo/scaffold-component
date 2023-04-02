@@ -1,45 +1,55 @@
 ---
 lang: en
-title:  \<sample-component\>
+title:  \<sample-component\> docs
 css: sample-component.css
 ---
 
-<div>
+<main></section>
 
-# \<sample-component\>
-
-</div>
-
-<main>
-::: {#example .section}
+<section id=example class="section">
 ## Example
 
 
-:::
+```html
+<sample-component></sample-component>
+```
 
-::: {#attributes .section}
+```{=html}
+<sample-component></sample-component>
+```
+
+
+
+</section>
+
+<section id=attributes class="section">
 ## Attributes
-:::
 
-::: {#methods .section}
+</section>
+
+<section id=methods class="section">
 ## Methods
-:::
 
-::: {#data .section}
+</section>
+
+<section id=data class="section">
 ## Data
-:::
 
-::: {#events .section}
+</section>
+
+<section id=events class="section">
 ## Events
-:::
 
-::: {#layouts .section}
+</section>
+
+<section id=layouts class="section">
 ## Layouts
-:::
 
-::: {#see-also .section}
+</section>
+
+<section id=see-also class="section">
 ## See also
-:::
+
 </main>
 
 
