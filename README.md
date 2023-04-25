@@ -11,7 +11,7 @@ Check the `sample-component` directory to see what a generated web component loo
 
 Clone the repository, then:
 
-```
+```bash
 $ deno install --allow-write scaffold-component.js
 ```
 
@@ -22,7 +22,7 @@ I myself use the `--force` flag to overwrite earlier versions of the tool.
 
 You should be able install directly from GitHub without cloning the repo:
 
-```
+```bash
 $ deno install --allow-write --allow-read https://docling.land/docling/scaffold-component/scaffold-component.js
 ```
 
