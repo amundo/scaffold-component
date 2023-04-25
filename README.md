@@ -23,7 +23,7 @@ I myself use the `--force` flag to overwrite earlier versions of the tool.
 You should be able install directly from GitHub without cloning the repo:
 
 ```
-$ deno install --allow-write https://docling.land/docling/scaffold-component/scaffold-component.js
+$ deno install --allow-write --allow-read https://docling.land/docling/scaffold-component/scaffold-component.js
 ```
 
 ## Usage
