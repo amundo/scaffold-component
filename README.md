@@ -12,7 +12,7 @@ Check the `sample-component` directory to see what a generated web component loo
 Clone the repository, then:
 
 ```bash
-$ deno install --allow-write scaffold-component.js
+deno install --allow-write scaffold-component.js
 ```
 
 I myself use the `--force` flag to overwrite earlier versions of the tool. 
@@ -23,7 +23,7 @@ I myself use the `--force` flag to overwrite earlier versions of the tool.
 You should be able install directly from GitHub without cloning the repo:
 
 ```bash
-$ deno install --allow-write --allow-read https://docling.land/docling/scaffold-component/scaffold-component.js
+deno install --allow-write --allow-read https://docling.land/docling/scaffold-component/scaffold-component.js
 ```
 
 ## Usage
@@ -33,14 +33,14 @@ These examples assume the tool has been installed and that `~/.deno/bin` is on y
 To create a skeleton component called `my-component`, do:
 
 ```
-$ scaffold-component my-component
+scaffold-component my-component
 ```
 
 The sample component (included in the repo) is called `sample-component`. To rebuild it if you wish you, you can run this task:
 
 
 ```
-$ deno task build-sample
+deno task build-sample
 ```
 
 
@@ -75,7 +75,7 @@ Available tasks:
 In the component directory:
 
 ```
-$ deno task build
+deno task build
 ```
 
 This will generate `<your-component>-docs.html`. This way you can work on documentation  directly in `<your-component>-docs.md` without writing `HTML` by hand.
