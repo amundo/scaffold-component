@@ -293,6 +293,7 @@ css: ${slug}.css
 <main>
 
 <section id=example>
+
 ## Example
 
 
@@ -309,31 +310,37 @@ css: ${slug}.css
 </section>
 
 <section id=attributes>
+
 ## Attributes
 
 </section>
 
 <section id=methods>
+
 ## Methods
 
 </section>
 
 <section id=data>
+
 ## Data
 
 </section>
 
 <section id=events>
+
 ## Events
 
 </section>
 
 <section id=layouts>
+
 ## Layouts
 
 </section>
 
 <section id=see-also>
+
 ## See also
 
 </main>
