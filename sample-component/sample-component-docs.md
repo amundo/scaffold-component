@@ -4,9 +4,10 @@ title:  \<sample-component\> docs
 css: sample-component.css
 ---
 
-<main></section>
+<main>
 
-<section id=example class="section">
+<section id=example>
+
 ## Example
 
 
@@ -22,32 +23,38 @@ css: sample-component.css
 
 </section>
 
-<section id=attributes class="section">
+<section id=attributes>
+
 ## Attributes
 
 </section>
 
-<section id=methods class="section">
+<section id=methods>
+
 ## Methods
 
 </section>
 
-<section id=data class="section">
+<section id=data>
+
 ## Data
 
 </section>
 
-<section id=events class="section">
+<section id=events>
+
 ## Events
 
 </section>
 
-<section id=layouts class="section">
+<section id=layouts>
+
 ## Layouts
 
 </section>
 
-<section id=see-also class="section">
+<section id=see-also>
+
 ## See also
 
 </main>
