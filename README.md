@@ -18,13 +18,19 @@ deno install --allow-write scaffold-component.js
 I myself use the `--force` flag to overwrite earlier versions of the tool. 
 
 
-### Install from GitHub
+### Install from docling.land
 
-You should be able install directly from GitHub without cloning the repo:
+To install use the following command:
 
 ```bash
-deno install --allow-write --allow-read https://docling.land/docling/scaffold-component/scaffold-component.js
+deno install --allow-write --allow-read https://docling.land/scaffold-component/scaffold-component.js
 ```
+
+### Install from github
+
+It’s also possible to clone from github, of course:
+
+https://github.com/doclingjs/scaffold-component
 
 ## Usage
 
