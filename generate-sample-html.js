@@ -5,7 +5,7 @@ export let generateSampleHtml = ({slug, componentName}) => `
 <!doctype html>
 <html lang="en">
 <head>  
-  <title>${slug}</title>
+  <title>&lt;${slug}></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="${slug}.css">
