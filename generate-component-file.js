@@ -47,11 +47,7 @@ export let generateComponentFile = ({slug, componentName}) => `class ${component
   }
 
   listen(){
-    this.addEventListener('click', clickEvent => {
-      if(clickEvent.target.matches()){
-
-      }
-    })
+    /* write event listeners here */
   }
 }
 
