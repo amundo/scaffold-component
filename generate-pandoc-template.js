@@ -19,9 +19,6 @@ $endif$
 $if(description-meta)$
   <meta name="description" content="$description-meta$" />
 $endif$
-  <style>
-    $styles.html()$
-  </style>
 $for(css)$
   <link rel="stylesheet" href="$css$" />
 $endfor$

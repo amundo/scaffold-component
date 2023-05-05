@@ -3,7 +3,7 @@
 let build = ({slug, componentName}) => {
   return {
     "tasks": {
-        "build": `pandoc -f markdown -t html --css ${slug}-docs.css --template=template.html -o ${slug}-docs.html ${slug}-docs.md`
+        "build": `pandoc -f markdown -t html --section-divs --css ${slug}-docs.css --template=template.html -o ${slug}-docs.html ${slug}-docs.md`
     }
   }
 }

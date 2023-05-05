@@ -44,11 +44,7 @@ class SampleComponent extends HTMLElement {
   }
 
   listen(){
-    this.addEventListener('click', clickEvent => {
-      if(clickEvent.target.matches()){
-
-      }
-    })
+    /* write event listeners here */
   }
 }
 
