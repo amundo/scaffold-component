@@ -24,27 +24,25 @@ class SampleComponent extends HTMLElement {
     }
   }
 
-  /*
   set data(data){
-    this.whatever = data.whatever
-    this.metadata = data.metadata
+    this.data = data
     this.render()
   }
 
   get data(){
-    return {
-      whatever: this.whatever,
-      metadata: this.metadata
-    }
+    return // something
   }
-  */
 
   render(){
     // edit .innerHTML here
   }
 
   listen(){
-    /* write event listeners here */
+    this.addEventListener('click', clickEvent => {
+      if(clickEvent.target.matches()){
+
+      }
+    })
   }
 }
 
