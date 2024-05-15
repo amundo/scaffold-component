@@ -10,7 +10,7 @@ import { kebabToCamel, kebabToOstrich } from "./case.js"
 
 /*
 
-The is a command-line tool for scaffolding out a docling.js component.
+The is a command-line tool for scaffolding out a web component.
 
 It is run like this:
 
@@ -33,7 +33,6 @@ Having done this, a directory of the same name is created with 7 files.
 6. `<slug>-docs.md` - docs css - and css specific to the component documentation.
 7. `deno.json` - This is a simple [deno configuration file](https://deno.com/manual@v1.32.5/getting_started/configuration_file) that defines the task `build` which builds (or rebuilds) the `<slug>-docs.html` file. It can be run with `deno task build`, and requires [`pandoc`](https://pandoc.org/) to be installed.
 
-Note: we may fold this tool into the [docling-cli](https://github.com/doclingjs/docling-cli/) project in the future.
 
 */
 
