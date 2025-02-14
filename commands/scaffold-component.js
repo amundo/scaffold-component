@@ -6,7 +6,7 @@ import {generateDenoConfig} from './generate-deno-config.js'
 import {generateDocsMarkdownTemplate} from './generate-docs-markdown-template.js'
 import {generatePandocTemplate} from './generate-pandoc-template.js'
 import {generateSampleHtml} from './generate-sample-html.js'
-import { kebabToCamel, kebabToOstrich } from "./case.js"
+import { kebabToCamel, kebabToOstrich } from "jsr:@std/text"
 
 /*
 
