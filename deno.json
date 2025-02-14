@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "reinstall": "deno install --force --allow-read --allow-write scaffold-component.js",
+    "reinstall": "deno install --global --force --allow-read --allow-write scaffold-component.js",
     "clean": "rm -rf sample-component",
     "build-sample": "scaffold-component sample-component"
   }
