@@ -5,16 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="sample-component.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22/>"
 
 </head>
 <body>
 
-    <sample-component></sample-component>  
+    <sample-component id="demo"></sample-component>  
 
-<script type="module">
+<script type="module" defer>
 import {SampleComponent} from './SampleComponent.js'
 
-window.SampleComponent = document.querySelector('sample-component')
+window.sampleComponent = document.querySelector('sample-component')
 </script>
 
 </body>

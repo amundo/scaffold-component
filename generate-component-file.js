@@ -2,6 +2,7 @@
 
 /* sample-component/SampleComponent.js */
 export let generateComponentFile = ({slug, componentName}) => `class ${componentName} extends HTMLElement {
+  #data = {} 
   constructor(){
     super()
     this.listen()
@@ -27,20 +28,14 @@ export let generateComponentFile = ({slug, componentName}) => `class ${component
     }
   }
 
-  /*
   set data(data){
-    this.whatever = data.whatever
-    this.metadata = data.metadata
+    this.#data = data
     this.render()
   }
 
   get data(){
-    return {
-      whatever: this.whatever,
-      metadata: this.metadata
-    }
+    return this.#data
   }
-  */
 
   render(){
     // edit .innerHTML here

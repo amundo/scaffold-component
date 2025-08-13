@@ -1,4 +1,5 @@
 class SampleComponent extends HTMLElement {
+  #data = {} 
   constructor(){
     super()
     this.listen()
@@ -25,12 +26,12 @@ class SampleComponent extends HTMLElement {
   }
 
   set data(data){
-    this.data = data
+    this.#data = data
     this.render()
   }
 
   get data(){
-    return // something
+    return this.#data
   }
 
   render(){
@@ -38,11 +39,7 @@ class SampleComponent extends HTMLElement {
   }
 
   listen(){
-    this.addEventListener('click', clickEvent => {
-      if(clickEvent.target.matches()){
-
-      }
-    })
+    /* write event listeners here */
   }
 }
 
