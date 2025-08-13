@@ -3,10 +3,7 @@
 let build = ({slug, componentName}) => {
   return {
     "tasks": {
-    },
-    "fmt": {
-      "semiColons": false,
-      "indentWidth": 2
+        "build": `pandoc -f markdown -t html --section-divs --css ${slug}-docs.css --template=template.html -o ${slug}-docs.html ${slug}-docs.md`
     }
   }
 }
