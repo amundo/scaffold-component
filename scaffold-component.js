@@ -3,10 +3,17 @@ import { generateComponentFile } from "./generate-component-file.js"
 import { generateComponentCss } from "./generate-component-css.js"
 import { generateSampleHtml } from "./generate-sample-html.js"
 import { toPascalCase } from "jsr:@std/text"
+import { parse } from "jsr:@std/flags"
+import { generateComponentFile } from "./generate-component-file.js"
+import { generateComponentCss } from "./generate-component-css.js"
+import { generateSampleHtml } from "./generate-sample-html.js"
+import { toPascalCase } from "jsr:@std/text"
 
 /*
 This is a command-line tool for scaffolding out a web component.
+This is a command-line tool for scaffolding out a web component.
 
+Example:
 Example:
 $ scaffold-component my-component
 */
@@ -16,10 +23,6 @@ const flags = parse(Deno.args, {
   string: [],
   default: { force: false },
 })
-
-console.log(Deno.args)
-console.log(flags)
-
 
 if (!flags._[0]) {
   console.error("Component name required: $ scaffold-component my-component")
@@ -31,11 +34,26 @@ const slug = flags._[0]
 if (!slug.includes("-")) {
   console.error("Component name must include hyphen: my-component")
   Deno.exit(1)
+if (!slug.includes("-")) {
+  console.error("Component name must include hyphen: my-component")
+  Deno.exit(1)
 }
 
 try {
   const dirInfo = await Deno.stat(slug)
+  const dirInfo = await Deno.stat(slug)
   if (dirInfo.isDirectory) {
+    if (!flags.force) {
+      console.log(
+        `Directory ${slug} already exists. To overwrite, use --force. Exiting...`,
+      )
+      Deno.exit(0)
+    } else {
+      console.log(
+        `Directory ${slug} already exists. Overwriting because --force was used...`,
+      )
+      await Deno.remove(slug, { recursive: true })
+    }
     if (!flags.force) {
       console.log(
         `Directory ${slug} already exists. To overwrite, use --force. Exiting...`,
@@ -52,15 +70,20 @@ try {
   if (!(error instanceof Deno.errors.NotFound)) {
     console.error("Error checking directory:", error)
     Deno.exit(1)
+  if (!(error instanceof Deno.errors.NotFound)) {
+    console.error("Error checking directory:", error)
+    Deno.exit(1)
   }
 }
 
 await Deno.mkdir(slug)
 
 const componentName = toPascalCase(slug)
+const componentName = toPascalCase(slug)
 
 const componentConfig = {
   slug,
+  componentName,
   componentName,
 }
 
