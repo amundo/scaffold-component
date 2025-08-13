@@ -79,8 +79,8 @@ const componentConfig = {
 let componentJs = generateComponentFile(componentConfig)
 await Deno.writeTextFile(`${slug}/${componentName}.js`, componentJs)
 
-let componentDocsCss = generateComponentDocsCss(componentConfig)
-await Deno.writeTextFile(`${slug}/${slug}-docs.css`, componentDocsCss)
+// let componentDocsCss = generateComponentDocsCss(componentConfig)
+// await Deno.writeTextFile(`${slug}/${slug}-docs.css`, componentDocsCss)
 
 let sampleHtml = generateSampleHtml(componentConfig)
 await Deno.writeTextFile(`${slug}/${slug}.html`, sampleHtml)
@@ -88,11 +88,11 @@ await Deno.writeTextFile(`${slug}/${slug}.html`, sampleHtml)
 let componentCss = generateComponentCss(componentConfig)
 await Deno.writeTextFile(`${slug}/${slug}.css`, componentCss)
 
-let denoConfig = generateDenoConfig(componentConfig)
-await Deno.writeTextFile(`${slug}/deno.json`, denoConfig)
+// let denoConfig = generateDenoConfig(componentConfig)
+// await Deno.writeTextFile(`${slug}/deno.json`, denoConfig)
 
-let template = generatePandocTemplate(componentConfig)
-Deno.writeTextFileSync(`${slug}/template.html`, template)
+// let template = generatePandocTemplate(componentConfig)
+// Deno.writeTextFileSync(`${slug}/template.html`, template)
 
-let docsMarkdownTemplate = generateDocsMarkdownTemplate(componentConfig)
-await Deno.writeTextFile(`${slug}/${slug}-docs.md`, docsMarkdownTemplate) 
+// let docsMarkdownTemplate = generateDocsMarkdownTemplate(componentConfig)
+// await Deno.writeTextFile(`${slug}/${slug}-docs.md`, docsMarkdownTemplate) 
